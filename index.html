@@ -1,55 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Kalkulator Matematika (Persegi)</title>
-	<style>
-		body {
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
-		}
-		h1 {
-			color: #4d4d4d;
-			text-align: center;
-		}
-		form {
-			margin: 0 auto;
-			width: 300px;
-		}
-		input[type="number"] {
-			display: block;
-			margin: 10px auto;
-			padding: 10px;
-			width: 100%;
-		}
-		input[type="submit"] {
-			background-color: #4c95af;
-			border: none;
-			color: white;
-			display: block;
-			margin: 10px auto;
-			padding: 10px;
-			width: 100%;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATIK :: Kalkulator Matematik</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
 </head>
+
 <body>
-	<h1>Kalkulator Matematika (Persegi)</h1>
-	<form>
-		<label for="sisi">Masukkan panjang sisi persegi:</label>
-		<input type="number" id="sisi" name="sisi" required>
-		<input type="submit" value="Hitung">
-	</form>
-	<script>
-		function hitungLuas() {
-			var sisi = document.getElementById("sisi").value;
-			var luas = sisi * sisi;
-			var keliling = 4 * sisi;
-			alert("Luas persegi dengan sisi " + sisi + " adalah " + luas + ". Keliling persegi dengan sisi " + sisi + " adalah " + keliling + ".");
-		}
-		document.querySelector("form").addEventListener("submit", function(event) {
-			event.preventDefault();
-			hitungLuas();
-		});
-	</script>
+    <header>
+        WELCOME TO KATIK
+        <span class="subtitle">Kalkulator Matematika</span>
+    </header>
+    <main>
+        <div class="desc">
+            <div>Hai Sobat, Selamat datang di <strong>KATIK:</strong></div>
+            <div>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai Luas dan Keliling Bangun Datar</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item-left">
+                <div>
+                    <h1>LUAS PERSEGI</h1>
+                </div>
+                <div>
+                    <img src="assets/img/luas.png" alt="gambar luas bujur sangkar" width="150">
+                    <p>Rumus Luas Persegi yaitu: <br>
+                        <div><span class="rumus"><strong> L = S x S</strong></span></div>
+                        <br> Dimana :<br> L = Luas<br> S = Sisi</p>
+                </div>
+                <div>
+                    <h2>Hitung Luas Persegi</h2>
+                    <input type="number" placeholder="Nilai Sisi" name="sisi-luas" required>
+                    <button id="hitung-luas" class="submit" onclick="hitungLuas()">Hitung</button>
+                    <button class="reset" onclick="resetLuas()">Reset</button>
+                    <div class="output-section-luas" id="output-section-luas" hidden>
+                        <span>Hasil Perhitungan:</span><br> L = S x S <br> L = <span id="sisi"></span><br> L = <span id="output_luas"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-item-right">
+                <div>
+                    <h1>KELILING PERSEGI</h1>
+                </div>
+                <div>
+                    <img src="assets/img/keliling.png" alt="gambar luas bujur sangkar" width="150">
+                    <p>Rumus Keliling Persegi yaitu:</p>
+                    <div>
+                        <span class="rumus"><strong> K = 4 x S</strong></span>
+                    </div>
+                    <br> Dimana :<br> K = Keliling<br> S = Sisi</p>
+                </div>
+
+                <div>
+                    <h2>Hitung Keliling Persegi</h2>
+                    <input type="number" placeholder="Nilai Sisi" name="sisi-keliling" required>
+                    <button name="hitung-keliling" class="submit" onclick="hitungKeliling()">Hitung</button>
+                    <button class="reset" onclick="resetKeliling()">Reset</button>
+                    <div class="output-section-keliling" id="output-section-keliling" hidden>
+                        <span>Hasil Perhitungan:</span><br> K = 4 x S <br> L = <span id="sisi-keliling"></span><br> L = <span id="output_keliling"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <center>
+            <p>Develop by Abdul Rahman Rianto</p>
+        </center>
+    </footer>
 </body>
+
 </html>
