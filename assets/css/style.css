@@ -59,7 +59,7 @@ header {
 }
 
 .submit {
-    background-color: #04AA6D;
+    background-color: #009ff5;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -78,8 +78,8 @@ header {
 
 .output-section-luas,
 .output-section-keliling {
-    background-color: #34db45;
-    color: #000000;
+    background-color: #1100ff;
+    color: #ffffff;
     border-radius: 10px;
     border: 2px solid #000000;
     min-height: 30px;
